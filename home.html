@@ -20,7 +20,7 @@
         <span class="brand-seal">鏡</span>
         <span class="brand-lines"><strong>千本鏡会</strong><small>SENBON KAGAMI-KAI</small></span>
       </a>
-      <nav class="home-nav" aria-label="Навигация по архиву"><a href="#home-top" class="active">ОБЗОР</a><a href="#archive">АРХИВ</a><a href="#fragment">ФРАГМЕНТ</a></nav>
+      <nav class="home-nav" aria-label="Навигация по архиву"><a href="#home-top" class="active">ОБЗОР</a><a href="#archive">АРХИВ</a><a href="#channel">КАНАЛ</a><a href="#fragment">ФРАГМЕНТ</a></nav>
       <button class="logout-button" id="logout-button" type="button">ЗАКРЫТЬ СЕАНС <span>↗</span></button>
     </header>
 
@@ -37,6 +37,41 @@
           <article class="archive-card"><div class="card-top"><span>DOC—001</span><span class="card-mark">○</span></div><p class="card-type">ОРГАНИЗАЦИЯ</p><h3>Протокол зеркала</h3><p>Краткий документ о правилах наблюдения и границах допустимого.</p><button type="button" class="open-record" data-record="protocol">ОТКРЫТЬ ДОКУМЕНТ <span>↗</span></button></article>
           <article class="archive-card"><div class="card-top"><span>DOC—002</span><span class="card-mark">△</span></div><p class="card-type">СЛУЖЕБНАЯ ЗАПИСКА</p><h3>Смена дежурства</h3><p>Запись оставлена сотрудником, который не числится в реестре.</p><button type="button" class="open-record" data-record="shift">ОТКРЫТЬ ДОКУМЕНТ <span>↗</span></button></article>
           <article class="archive-card archive-card-locked"><div class="card-top"><span>DOC—003</span><span class="card-mark">▧</span></div><p class="card-type">УРОВЕНЬ ДОСТУПА: ?</p><h3>Комната без двери</h3><p>Данные повреждены. Для восстановления нужен исходный ключ.</p><button type="button" class="open-record" data-record="locked">ВОССТАНОВИТЬ <span>↗</span></button></article>
+        </div>
+      </section>
+
+      <section class="signal-section" id="channel" aria-labelledby="signal-title">
+        <div class="section-heading signal-heading">
+          <div><p class="section-code"><span>03</span> / INTERCOM</p><h2 id="signal-title">Внутренний канал</h2></div>
+          <div class="channel-summary"><span class="status-light" aria-hidden="true"></span><strong id="online-agent-count">09</strong><span>АГЕНТОВ В СЕТИ</span><small>ТРАФИК / ПЕРЕМЕННЫЙ</small></div>
+        </div>
+        <div class="chat-console">
+          <aside class="chat-sidebar" aria-label="Каналы и присутствующие сотрудники">
+            <div class="chat-sidebar-cap">ДОСТУПНЫЕ КАНАЛЫ <span>03</span></div>
+            <div class="channel-list" role="group" aria-label="Выбрать канал">
+              <button type="button" class="channel-switch is-active" data-channel="kagami" aria-pressed="true"><span class="channel-hash">#</span><span class="channel-switch-copy"><strong>KAGAMI-7</strong><small>Сектор наблюдения</small></span><span class="channel-unread">04</span></button>
+              <button type="button" class="channel-switch" data-channel="mirror" aria-pressed="false"><span class="channel-hash">#</span><span class="channel-switch-copy"><strong>MIRROR-TEST</strong><small>Контроль отражения</small></span><span class="channel-unread">02</span></button>
+              <button type="button" class="channel-switch" data-channel="east" aria-pressed="false"><span class="channel-hash">#</span><span class="channel-switch-copy"><strong>OPS-EAST</strong><small>Восточный сектор</small></span><span class="channel-unread">01</span></button>
+            </div>
+            <div class="chat-roster-heading">ПРИСУТСТВУЮТ <span id="roster-count">06</span></div>
+            <ul class="chat-roster" id="chat-roster">
+              <li><span class="roster-indicator"></span><span><strong>ARCH-0</strong><small>АРХИВАРИУС</small></span><span class="roster-state">●</span></li>
+              <li><span class="roster-indicator"></span><span><strong>K-09</strong><small>СТАРШИЙ КУРАТОР</small></span><span class="roster-state">●</span></li>
+              <li><span class="roster-indicator"></span><span><strong>MIZU-03</strong><small>АГЕНТ ПОЛЯ</small></span><span class="roster-state">●</span></li>
+              <li><span class="roster-indicator"></span><span><strong>N-14</strong><small>МЛАДШИЙ НАБЛЮДАТЕЛЬ</small></span><span class="roster-state">●</span></li>
+            </ul>
+            <div class="chat-sidebar-foot"><span class="status-light" aria-hidden="true"></span>УЗЕЛ СИНХРОНИЗИРОВАН</div>
+          </aside>
+          <div class="chat-main">
+            <header class="chat-header"><div><p class="micro-label">INTERNAL RELAY / ENCRYPTION NOMINAL</p><h3 id="active-channel-title">#kagami-7</h3><p id="active-channel-subtitle">Сектор наблюдения · пакетный канал</p></div><span class="channel-live"><i></i> LIVE</span></header>
+            <div class="chat-log" id="chat-log" role="log" aria-live="polite" aria-relevant="additions text" aria-label="Сообщения внутреннего канала"></div>
+            <div class="chat-typing" id="chat-typing" hidden><span class="typing-dots"><i></i><i></i><i></i></span><span id="typing-label">АГЕНТ ПЕЧАТАЕТ</span><span class="typing-rule"></span></div>
+            <form class="chat-compose" id="chat-form">
+              <label class="sr-only" for="chat-input">Передать сообщение в канал</label>
+              <span class="compose-prefix">&gt;_</span><input id="chat-input" type="text" maxlength="160" autocomplete="off" placeholder="Ввести пакет сообщения…"><button type="submit">ПЕРЕДАТЬ <span>↗</span></button>
+            </form>
+            <footer class="chat-foot"><span id="chat-packet-state">PACKET BUFFER / READY</span><span>LOCAL MIRROR · TRAFFIC SIMULATION</span></footer>
+          </div>
         </div>
       </section>
 
