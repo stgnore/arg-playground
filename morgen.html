@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MORGEN // Restricted Access</title>
+<style>
+:root {
+  --bg: #080d11;
+  --panel: #101820;
+  --line: #263640;
+  --red: #d34e58;
+  --text: #dce5e9;
+  --muted: #81929c;
+  --green: #8ce0b1;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% 0%, #1a2933 0%, transparent 60%),
+    var(--bg);
+  color: var(--text);
+  font-family: Consolas, "Courier New", monospace;
+  padding: 24px;
+}
+main {
+  width: 100%;
+  max-width: 700px;
+  margin: 7vh auto;
+}
+.brand {
+  color: var(--red);
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+h1 {
+  font-size: clamp(28px, 6vw, 46px);
+  letter-spacing: 2px;
+  margin: 14px 0 8px;
+}
+.subtitle {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.panel {
+  border: 1px solid var(--line);
+  background: rgba(16, 24, 32, .92);
+  padding: 26px;
+  margin-top: 28px;
+}
+.status {
+  color: var(--red);
+  font-size: 12px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 15px;
+  margin-bottom: 24px;
+}
+label {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin: 18px 0 8px;
+}
+input {
+  width: 100%;
+  padding: 13px;
+  color: var(--text);
+  background: #080d11;
+  border: 1px solid var(--line);
+  font: inherit;
+  outline: none;
+}
+input:focus { border-color: var(--red); }
+button {
+  width: 100%;
+  margin-top: 22px;
+  padding: 14px;
+  background: var(--red);
+  border: 0;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+button:hover { filter: brightness(1.15); }
+#message {
+  min-height: 24px;
+  color: var(--red);
+  font-size: 12px;
+  line-height: 1.7;
+  margin-top: 16px;
+}
+#secret {
+  display: none;
+  margin-top: 26px;
+  border: 1px solid #416b58;
+  padding: 24px;
+  background: #0b1714;
+}
+#secret h2 { color: var(--green); }
+#secret p { line-height: 1.8; }
+.stamp {
+  color: var(--green);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+footer {
+  margin-top: 28px;
+  font-size: 11px;
+  color: #52616a;
+  line-height: 1.8;
+}
+a { color: var(--red); }
+</style>
+</head>
+<body>
+<main>
+  <div class="brand">NACHTWERK SYSTEMS // INTERNAL NETWORK</div>
+  <h1>PROJECT MORGEN</h1>
+  <div class="subtitle">
+    СИСТЕМА КЛАССИФИКАЦИИ: BLACK<br>
+    НЕСАНКЦИОНИРОВАННЫЙ ДОСТУП ЗАПРЕЩЁН
+  </div>
+
+  <section class="panel">
+    <div class="status">
+      ● ТЕРМИНАЛ ДОСТУПЕН / ПРОВЕРКА УЧЁТНЫХ ДАННЫХ
+    </div>
+
+    <form id="login">
+      <label for="codename">ПОЗЫВНОЙ СОТРУДНИКА</label>
+      <input id="codename" autocomplete="off"
+        placeholder="Введите позывной" required>
+
+      <label for="accesscode">КОД ДОСТУПА</label>
+      <input id="accesscode" type="password"
+        autocomplete="off" placeholder="Введите код" required>
+
+      <button type="submit">ПРОВЕРИТЬ ДОПУСК →</button>
+    </form>
+
+    <div id="message" aria-live="polite"></div>
+
+    <section id="secret">
+      <div class="stamp">ДОСТУП ПОДТВЕРЖДЁН // УРОВЕНЬ 4</div>
+      <h2>ДОСЬЕ MORGEN-01</h2>
+      <p><b>Статус:</b> активен</p>
+      <p><b>Последняя запись:</b> 17.11 / 03:14</p>
+      <p>
+        Объект продолжает отвечать на сигналы, несмотря
+        на официальное прекращение эксперимента.
+      </p>
+      <p>
+        В журнале обнаружено сообщение:
+        <br><br>
+        <i>«Вы ищете начало. Но начало уже заметило вас».</i>
+      </p>
+      <p>
+        <b>Следующая инструкция:</b> найдите запись 07
+        в архиве и сопоставьте время её создания
+        с последним системным событием.
+      </p>
+    </section>
+  </section>
+
+  <footer>
+    NW-SYS / DIVISION 09<br>
+    Все действия в терминале регистрируются.<br>
+    <a href="index.html">← Вернуться на корпоративный сайт</a>
+  </footer>
+</main>
+
+<script>
+const form = document.getElementById("login");
+const message = document.getElementById("message");
+const secret = document.getElementById("secret");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const codename = document.getElementById("codename")
+    .value.trim().toLowerCase();
+  const accesscode = document.getElementById("accesscode")
+    .value.trim().toUpperCase();
+
+  // Демонстрационная игровая проверка, НЕ защита настоящего секрета.
+  if (codename === "operator" && accesscode === "MORGEN-17") {
+    message.textContent = "ДОПУСК ПОДТВЕРЖДЁН.";
+    secret.style.display = "block";
+    form.style.display = "none";
+  } else {
+    message.textContent =
+      "ОШИБКА 403: ДОПУСК ОТКЛОНЁН. ПРОВЕРЬТЕ УЧЁТНЫЕ ДАННЫЕ.";
+    secret.style.display = "none";
+  }
+});
+</script>
+</body>
+</html>
