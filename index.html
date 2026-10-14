@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="千本鏡会 — закрытый узел внутренней сети. Вход разрешён только приглашённым наблюдателям.">
+  <title>千本鏡会 — Внутренний узел</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="千本鏡会 — на главную">
+        <span class="mark" aria-hidden="true">鏡</span>
+        <span class="wordmark-copy">
+          <span class="wordmark-jp">千本鏡会</span>
+          <span class="wordmark-en">SENBON KAGAMI-KAI</span>
+        </span>
+      </a>
+      <div class="header-meta">
+        <span>ВНУТРЕННЯЯ СЕТЬ</span>
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>УЗЕЛ 01 / <time id="local-clock">--:--:--</time></span>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="eyebrow-line"></span> ДОКУМЕНТ 00—01 / ДОСТУП ОГРАНИЧЕН</p>
+        <h1 id="page-title">Не всякое<br>отражение — <span>твоё.</span></h1>
+        <p class="intro-copy">Ты нашёл вход. Это ещё не значит, что тебя ждали.</p>
+      </section>
+
+      <section class="gate-section" aria-label="Визуализация врата тории">
+        <div class="gate-topline">
+          <span>ПРОТОКОЛ: KAGAMI</span>
+          <span>ОРИЕНТИР / 鳥居</span>
+        </div>
+        <div class="gate-stage" id="gate-stage">
+          <pre class="ascii-gate" id="ascii-gate" aria-label="Анимированные ASCII-врата тории" role="img">
+             ______________________
+        ____/______________________\____
+           |                       |
+   ________|_______________________|________
+   |       |                       |       |
+   |       |                       |       |
+   |       |                       |       |
+   |_______|_______________________|_______|
+           |                       |
+           |                       |
+           |_______________________|
+          </pre>
+          <span class="gate-coordinate coordinate-left">35° 41′ N</span>
+          <span class="gate-coordinate coordinate-right">139° 41′ E</span>
+          <span class="gate-crosshair crosshair-one" aria-hidden="true">+</span>
+          <span class="gate-crosshair crosshair-two" aria-hidden="true">+</span>
+        </div>
+        <div class="gate-bottomline">
+          <span id="gate-caption" aria-live="polite">СИНХРОНИЗАЦИЯ ЗЕРКАЛА</span>
+          <span class="progress-label"><span id="progress-value">00</span> / 100</span>
+        </div>
+        <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
+      </section>
+
+      <section class="access-section" aria-labelledby="access-title">
+        <div class="access-index" aria-hidden="true">01</div>
+        <div class="access-content">
+          <p class="eyebrow">ПОДТВЕРЖДЕНИЕ ЛИЧНОСТИ</p>
+          <h2 id="access-title">Назови себя.</h2>
+          <p class="access-description">Введи данные, по которым тебя узнает зеркало.</p>
+
+          <form id="access-form" autocomplete="off">
+            <label for="login">ИДЕНТИФИКАТОР / LOGIN</label>
+            <input id="login" name="login" type="text" placeholder="например, observer-07" autocapitalize="off" spellcheck="false" required maxlength="64">
+
+            <label for="password">КЛЮЧ / PASSWORD</label>
+            <div class="password-wrap">
+              <input id="password" name="password" type="password" placeholder="••••••••••••" required maxlength="128">
+              <button class="reveal-button" id="toggle-password" type="button" aria-label="Показать пароль" aria-pressed="false">ПОКАЗАТЬ</button>
+            </div>
+
+            <button class="submit-button" type="submit">
+              <span>ЗАПРОСИТЬ ДОСТУП</span>
+              <span class="submit-arrow" aria-hidden="true">↗</span>
+            </button>
+          </form>
+
+          <div id="response-message" class="response-message" role="status" aria-live="polite" hidden></div>
+          <p class="privacy-note"><span class="privacy-mark">※</span> ARG-СИМУЛЯЦИЯ. Форма работает локально: данные не отправляются и не сохраняются. Не вводи реальные пароли.</p>
+        </div>
+      </section>
+
+      <section class="fragment-section" aria-label="Фрагмент сообщения">
+        <span class="fragment-label">ФРАГМЕНТ / 00:00:01</span>
+        <p>「鏡は嘘をつかない。人間が嘘をつく。」</p>
+        <p class="fragment-translation">Зеркало не лжёт. Лгут люди.</p>
+        <span class="fragment-seal" aria-hidden="true">千</span>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>千本鏡会 © — ВНУТРЕННИЙ АРХИВ</span>
+      <span>НЕ ПОДКЛЮЧАЙСЯ К ТОМУ, ЧТО УЖЕ СМОТРИТ НА ТЕБЯ.</span>
+    </footer>
+  </div>
+  <noscript><p class="noscript-note">Для анимации и локальной симуляции доступа требуется JavaScript.</p></noscript>
+</body>
+</html>
