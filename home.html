@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="千本鏡会 — внутренний архив закрытой организации.">
+  <title>千本鏡会 — Внутренний архив</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="home.js" defer></script>
+</head>
+<body>
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+<!-- Main organization archive -->
+  <section class="screen home-screen is-active" id="home-screen" aria-label="Главная страница организации" aria-hidden="false">
+    <header class="inner-header home-header">
+      <a class="brand" href="#home-top" aria-label="千本鏡会 — архив">
+        <span class="brand-seal">鏡</span>
+        <span class="brand-lines"><strong>千本鏡会</strong><small>SENBON KAGAMI-KAI</small></span>
+      </a>
+      <nav class="home-nav" aria-label="Навигация по архиву"><a href="#home-top" class="active">ОБЗОР</a><a href="#archive">АРХИВ</a><a href="#fragment">ФРАГМЕНТ</a></nav>
+      <button class="logout-button" id="logout-button" type="button">ЗАКРЫТЬ СЕАНС <span>↗</span></button>
+    </header>
+
+    <main class="home-main" id="home-top">
+      <div class="welcome-line"><span class="status-light"></span> ДОСТУП ПОДТВЕРЖДЁН <span class="welcome-divider">/</span><span id="session-id">SESSION—0000</span><span class="welcome-spacer"></span><span id="home-clock">00:00:00 JST</span></div>
+      <section class="home-hero">
+        <div class="home-hero-copy"><p class="section-code"><span>ARCHIVE / 00</span> — INTERNAL ONLY</p><p class="home-kanji" aria-hidden="true">千本鏡会</p><h1>Ничего не исчезает.<br><em>Меняется отражение.</em></h1><p class="home-lead">Ты внутри. Здесь хранятся вещи, которые официально никогда не существовали.</p></div>
+        <div class="hero-seal" aria-hidden="true"><span>千</span><i></i><small>EST. UNKNOWN</small></div>
+      </section>
+
+      <section class="archive-section" id="archive">
+        <div class="section-heading"><div><p class="section-code"><span>02</span> / DIRECTORY</p><h2>Внутренний архив</h2></div><span class="archive-count">3 ОБЪЕКТА / 1 ЗАШИФРОВАН</span></div>
+        <div class="archive-grid">
+          <article class="archive-card"><div class="card-top"><span>DOC—001</span><span class="card-mark">○</span></div><p class="card-type">ОРГАНИЗАЦИЯ</p><h3>Протокол зеркала</h3><p>Краткий документ о правилах наблюдения и границах допустимого.</p><button type="button" class="open-record" data-record="protocol">ОТКРЫТЬ ДОКУМЕНТ <span>↗</span></button></article>
+          <article class="archive-card"><div class="card-top"><span>DOC—002</span><span class="card-mark">△</span></div><p class="card-type">СЛУЖЕБНАЯ ЗАПИСКА</p><h3>Смена дежурства</h3><p>Запись оставлена сотрудником, который не числится в реестре.</p><button type="button" class="open-record" data-record="shift">ОТКРЫТЬ ДОКУМЕНТ <span>↗</span></button></article>
+          <article class="archive-card archive-card-locked"><div class="card-top"><span>DOC—003</span><span class="card-mark">▧</span></div><p class="card-type">УРОВЕНЬ ДОСТУПА: ?</p><h3>Комната без двери</h3><p>Данные повреждены. Для восстановления нужен исходный ключ.</p><button type="button" class="open-record" data-record="locked">ВОССТАНОВИТЬ <span>↗</span></button></article>
+        </div>
+      </section>
+
+      <section class="fragment-panel" id="fragment"><div class="fragment-symbol" aria-hidden="true">「鏡」</div><div><p class="section-code"><span>UNSOLICITED MESSAGE</span> / 00:00:13</p><h2>Ты не первый, кто вошёл.</h2><p id="fragment-copy">Последний наблюдатель оставил одну строку: «Не доверяй тому, что помнит твоё имя».</p></div><button type="button" id="reveal-fragment" class="fragment-button">ПОКАЗАТЬ СЛЕДУЮЩУЮ СТРОКУ <span>↗</span></button></section>
+      <div id="record-modal" class="record-modal" hidden role="dialog" aria-modal="true" aria-labelledby="record-title"><div class="modal-card"><div class="modal-top"><span id="record-code">DOC—001</span><button type="button" id="close-record" aria-label="Закрыть документ">×</button></div><p class="micro-label">ВНУТРЕННИЙ АРХИВ / РАСШИФРОВАНО</p><h2 id="record-title">Протокол зеркала</h2><p id="record-body"></p><div class="modal-bottom">千本鏡会 — COPY <span>НЕ ДЛЯ РАСПРОСТРАНЕНИЯ</span></div></div></div>
+    </main>
+    <footer class="inner-footer"><span>千本鏡会 © INTERNAL ARCHIVE</span><span>ЕСЛИ ТЫ ЧИТАЕШЬ ЭТО, ТОБЕ УЖЕ ОТВЕТИЛИ.</span></footer>
+  </section>
+  <noscript><p class="noscript-note">Для внутреннего архива необходимо включить JavaScript.</p></noscript>
+</body>
+</html>

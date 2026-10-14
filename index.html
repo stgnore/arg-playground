@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="千本鏡会 — закрытая организация. Идентификация и внутренний архив.">
+  <title>千本鏡会 — Внутренний узел</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- SCREEN 00: full-screen animated ASCII torii intro -->
+  <section class="screen boot-screen is-active" id="boot-screen" aria-label="Инициализация зеркальных врат" aria-hidden="false">
+    <header class="boot-header">
+      <a class="brand" href="#" aria-label="千本鏡会">
+        <span class="brand-seal">鏡</span>
+        <span class="brand-lines"><strong>千本鏡会</strong><small>SENBON KAGAMI-KAI</small></span>
+      </a>
+      <div class="boot-status"><span class="status-light"></span><span>ЗАКРЫТЫЙ УЗЕЛ</span><span class="status-divider">/</span><span id="boot-clock">00:00:00</span></div>
+    </header>
+
+    <div class="boot-coord coord-left">SECTOR 35°41′N<br>ARCHIVE 01-A</div>
+    <div class="boot-coord coord-right">鏡面同期<br>WAIT FOR SIGNAL</div>
+
+    <main class="boot-center">
+      <div class="boot-kicker"><span class="crosshair">＋</span> ПРОТОКОЛ ПЕРЕСЕЧЕНИЯ <span class="crosshair">＋</span></div>
+      <div class="gate-frame" id="gate-frame">
+        <div class="gate-scan" aria-hidden="true"></div>
+        <pre class="ascii-gate" id="ascii-gate" role="img" aria-label="Анимация японских врат тории"></pre>
+        <span class="gate-node node-a" aria-hidden="true">A-01</span>
+        <span class="gate-node node-b" aria-hidden="true">B-07</span>
+      </div>
+      <div class="boot-title-row">
+        <div><p class="boot-jp">境界を越える</p><h1>THE MIRROR GATE</h1><p class="boot-subtitle">ГРАНИЦА МЕЖДУ НАБЛЮДАТЕЛЕМ И ОТРАЖЕНИЕМ</p></div>
+        <div class="boot-progress-box"><span id="boot-caption">ПОИСК СИГНАЛА</span><strong><span id="boot-percent">00</span><small> / 100</small></strong></div>
+      </div>
+    </main>
+
+    <footer class="boot-footer">
+      <div class="progress-track"><span id="boot-progress"></span></div>
+      <span>千本鏡会 INTERNAL SYSTEMS</span>
+      <button class="skip-intro" type="button" id="skip-intro">ПРОПУСТИТЬ ИНИЦИАЛИЗАЦИЮ <span>↗</span></button>
+    </footer>
+    <p class="boot-warning">НЕ СМОТРИ ЗА ВРАТА, ПОКА ОНИ НЕ ОТКРЫТЫ.</p>
+  </section>
+
+  <!-- SCREEN 01: credential check -->
+  <section class="screen login-screen" id="login-screen" aria-label="Вход в систему" aria-hidden="true" inert>
+    <header class="inner-header">
+      <a class="brand" href="#" id="login-brand" aria-label="千本鏡会 — начало">
+        <span class="brand-seal">鏡</span>
+        <span class="brand-lines"><strong>千本鏡会</strong><small>SENBON KAGAMI-KAI</small></span>
+      </a>
+      <div class="header-right"><span class="status-light"></span> MIRROR NETWORK <span class="header-version">/ V.0.01</span></div>
+    </header>
+
+    <main class="login-layout">
+      <section class="login-intro">
+        <p class="section-code"><span>01</span> / IDENTITY VERIFICATION</p>
+        <p class="login-kanji" aria-hidden="true">認</p>
+        <h2>Кто<br>смотрит <em>внутрь?</em></h2>
+        <p class="login-lead">Врата распознали присутствие.<br>Представься, прежде чем идти дальше.</p>
+        <div class="login-seal-note"><span class="seal-line"></span><span>ЛИЧНОСТЬ НЕ РАВНА ИМЕНИ</span></div>
+      </section>
+
+      <section class="auth-panel" aria-labelledby="auth-title">
+        <div class="panel-topline"><span>AUTHENTICATION NODE</span><span>NODE—0001</span></div>
+        <div class="panel-heading"><span class="panel-index">A/01</span><div><p class="micro-label">ЗАПРОС ДОСТУПА</p><h3 id="auth-title">Идентификация</h3></div></div>
+        <form id="login-form" novalidate>
+          <label for="username">ИДЕНТИФИКАТОР <span>LOGIN</span></label>
+          <input id="username" name="username" type="text" placeholder="Введите идентификатор" autocomplete="username" autocapitalize="off" spellcheck="false" maxlength="64" required>
+          <label for="password">КЛЮЧ ДОСТУПА <span>PASSWORD</span></label>
+          <div class="password-field"><input id="password" name="password" type="password" placeholder="Введите ключ" autocomplete="current-password" maxlength="128" required><button type="button" id="toggle-password" aria-label="Показать пароль" aria-pressed="false">ПОКАЗАТЬ</button></div>
+          <button class="login-submit" type="submit"><span>ВОЙТИ В СИСТЕМУ</span><span class="button-arrow">↗</span></button>
+          <p class="form-response" id="login-response" aria-live="polite" role="status" hidden></p>
+        </form>
+        <div class="dev-credentials"><span class="dev-dot"></span><div><strong>ТЕСТОВЫЙ РЕЖИМ</strong><p>LOGIN: <code>admin</code><span class="credential-separator">/</span>PASSWORD: <code>admin</code></p></div><span class="dev-label">DEV ONLY</span></div>
+        <p class="auth-footnote">СИМУЛЯЦИЯ ARG · УЧЁТНЫЕ ДАННЫЕ ПРОВЕРЯЮТСЯ ЛОКАЛЬНО И НЕ ОТПРАВЛЯЮТСЯ НА СЕРВЕР.</p>
+      </section>
+    </main>
+
+    <footer class="inner-footer"><span>千本鏡会 © INTERNAL ARCHIVE</span><span>ТЫ УЖЕ ОСТАВИЛ ОТРАЖЕНИЕ.</span></footer>
+  </section>
+
+  <noscript><p class="noscript-note">Для анимации и переходов между экранами необходимо включить JavaScript.</p></noscript>
+</body>
+</html>
