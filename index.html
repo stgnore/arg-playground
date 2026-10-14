@@ -4,10 +4,517 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Мой первый сайт</title>
+  <meta name="theme-color" content="#080d11">
+  <title>NACHTWERK SYSTEMS — Технологии будущего</title>
+  <style>
+    :root {
+      --bg: #080d11;
+      --panel: #0c141a;
+      --text: #e1e9ec;
+      --muted: #8a9da7;
+      --line: #26353d;
+      --accent: #d34e58;
+      --cyan: #7eb7c5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1320px, 100% - 48px);
+      margin: auto;
+    }
+
+    .topbar {
+      border-bottom: 1px solid var(--line);
+      background: #080d11;
+    }
+
+    .nav {
+      min-height: 84px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      line-height: 1.2;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      transform: rotate(45deg);
+      font-size: 23px;
+    }
+
+    .brand-mark span {
+      transform: rotate(-45deg);
+    }
+
+    .brand small {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      color: #aab8bf;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover,
+    .text-link:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.8fr) minmax(260px, 0.8fr);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-main {
+      position: relative;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      padding: 64px clamp(24px, 6vw, 84px);
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, #080d11 0%, rgba(8,13,17,.94) 28%,
+        rgba(8,13,17,.48) 100%),
+        linear-gradient(0deg, #080d11 0%, transparent 45%),
+        url("https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1800&q=85")
+        center / cover;
+    }
+
+    .hero-main::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(126,183,197,.12);
+      pointer-events: none;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+      max-width: 570px;
+    }
+
+    .eyebrow {
+      color: var(--cyan);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .status {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: #91c7aa;
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    .status::before {
+      content: "●";
+      margin-right: 9px;
+      color: #70c79b;
+    }
+
+    h1 {
+      margin: 14px 0 22px;
+      font-size: clamp(36px, 5vw, 66px);
+      line-height: 1.08;
+      font-weight: 400;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+    }
+
+    h1 strong {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .intro {
+      max-width: 450px;
+      color: #b0bdc4;
+      font-size: 15px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 12px 20px;
+      border: 1px solid var(--accent);
+      color: var(--text);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: .2s;
+    }
+
+    .button:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .news {
+      padding: 44px 30px;
+      background: var(--panel);
+      border-left: 1px solid var(--line);
+    }
+
+    .section-label {
+      margin: 0 0 26px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .news-item {
+      display: block;
+      padding: 20px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .news-item time {
+      color: var(--cyan);
+      font-size: 11px;
+    }
+
+    .news-item p {
+      margin: 5px 0 0;
+      font-size: 13px;
+    }
+
+    .news-item:hover p {
+      color: var(--accent);
+    }
+
+    .departments {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .department {
+      padding: 36px 26px 40px;
+      border-right: 1px solid var(--line);
+      scroll-margin-top: 24px;
+    }
+
+    .department:last-child {
+      border-right: 0;
+    }
+
+    .department .number {
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .department h2 {
+      margin: 12px 0;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .department p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .text-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: var(--cyan);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .classified {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+      padding: 28px;
+      margin: 32px 0;
+      border: 1px solid var(--line);
+      background: linear-gradient(110deg, #101b22, #0a1015);
+    }
+
+    .classified h2 {
+      margin: 0 0 5px;
+      font-size: 17px;
+      font-weight: 400;
+    }
+
+    .classified p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .tag {
+      padding: 5px 9px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    footer {
+      padding: 26px 0;
+      color: #71838d;
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 850px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-main {
+        min-height: 460px;
+      }
+
+      .news {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .departments {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .department:nth-child(2) {
+        border-right: 0;
+      }
+
+      .department:nth-child(-n+2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 22px 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: calc(100% - 28px);
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .hero-main {
+        padding: 48px 22px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .departments {
+        grid-template-columns: 1fr;
+      }
+
+      .department,
+      .department:nth-child(2) {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .classified {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Мой первый сайт</h1>
-  <p>Если ты видишь эту страницу, всё работает!</p>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#home">
+        <span class="brand-mark"><span>N</span></span>
+        <span>
+          NACHTWERK
+          <small>SYSTEMS</small>
+        </span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#home">Главная</a>
+        <a href="#about">О компании</a>
+        <a href="#divisions">Подразделения</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-main">
+        <div class="hero-copy">
+          <span class="status">Все системы функционируют</span>
+          <div class="eyebrow">Nachtwerk Systems / Европа</div>
+
+          <h1>
+            Будущее<br>
+            принадлежит<br>
+            <strong>нам.</strong>
+          </h1>
+
+          <p class="intro">
+            Мы создаём технологии, которые стирают границу
+            между человеческими возможностями и машинным
+            совершенством. Ваша безопасность — наш приоритет.
+          </p>
+
+          <a class="button" href="#about">Узнать о нас →</a>
+        </div>
+      </div>
+
+      <aside class="news">
+        <h2 class="section-label">Корпоративный вестник</h2>
+
+        <a class="news-item" href="#classified">
+          <time>12.10.2082</time>
+          <p>Проект «MORGEN» переходит на следующую стадию.</p>
+        </a>
+
+        <a class="news-item" href="#divisions">
+          <time>08.10.2082</time>
+          <p>Новый исследовательский комплекс открыт в Европе.</p>
+        </a>
+
+        <a class="news-item" href="#contact">
+          <time>01.10.2082</time>
+          <p>Начат набор специалистов службы безопасности.</p>
+        </a>
+
+        <a class="text-link" href="#classified">Все сообщения →</a>
+      </aside>
+    </section>
+
+    <section class="container" id="about">
+      <div class="classified" id="classified">
+        <div>
+          <div class="eyebrow">Внутренний документ / NW-09</div>
+          <h2>Протокол MORGEN</h2>
+          <p>
+            Доступ к подробностям проекта ограничен.
+            Для получения допуска обратитесь к куратору.
+          </p>
+        </div>
+        <span class="tag">УРОВЕНЬ 04</span>
+      </div>
+    </section>
+
+    <section class="departments" id="divisions">
+      <article class="department">
+        <span class="number">01 / POWER</span>
+        <h2>Энергетика</h2>
+        <p>
+          Независимые источники энергии для мегаполисов
+          нового поколения.
+        </p>
+        <a class="text-link" href="#contact">Подробнее →</a>
+      </article>
+
+      <article class="department">
+        <span class="number">02 / AUGMENT</span>
+        <h2>Кибернетика</h2>
+        <p>
+          Совершенствование человеческих возможностей
+          с помощью передовых имплантов.
+        </p>
+        <a class="text-link" href="#contact">Подробнее →</a>
+      </article>
+
+      <article class="department">
+        <span class="number">03 / INTEL</span>
+        <h2>Искусственный интеллект</h2>
+        <p>
+          Аналитические системы, прогнозирование
+          и автоматизация корпоративных процессов.
+        </p>
+        <a class="text-link" href="#contact">Подробнее →</a>
+      </article>
+
+      <article class="department">
+        <span class="number">04 / SECURITY</span>
+        <h2>Безопасность</h2>
+        <p>
+          Защита инфраструктуры, данных
+          и интересов наших партнёров.
+        </p>
+        <a class="text-link" href="#contact">Подробнее →</a>
+      </article>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="container footer-inner">
+      <span>© 2082 NACHTWERK SYSTEMS / ВСЕ ПРАВА ЗАЩИЩЕНЫ</span>
+      <span>ДОСТУП К СИСТЕМЕ: ОТКРЫТ</span>
+      <span>БЕРЛИН — ЕВРОПЕЙСКИЙ РЕГИОН</span>
+    </div>
+  </footer>
 </body>
 </html>
