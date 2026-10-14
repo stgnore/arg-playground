@@ -611,41 +611,47 @@
       <span>БЕРЛИН — ЕВРОПЕЙСКИЙ РЕГИОН</span>
     </div>
   </footer>
-const bootScreen = document.getElementById("boot-screen");
-const bootProgress = document.getElementById("boot-progress");
-const bootStatus = document.getElementById("boot-status");
+```html
+  <script>
+    const bootScreen = document.getElementById("boot-screen");
+    const bootProgress = document.getElementById("boot-progress");
+    const bootStatus = document.getElementById("boot-status");
 
-let progress = 0;
+    let progress = 0;
 
-const bootMessages = [
-  "INITIALIZING SYSTEM...",
-  "CHECKING SECURITY PROTOCOLS...",
-  "CONNECTING TO INTERNAL NETWORK...",
-  "ACCESSING CORPORATE DATABASE...",
-  "CONNECTION ESTABLISHED."
-];
+    const bootMessages = [
+      "INITIALIZING SYSTEM...",
+      "CHECKING SECURITY PROTOCOLS...",
+      "CONNECTING TO INTERNAL NETWORK...",
+      "ACCESSING CORPORATE DATABASE...",
+      "CONNECTION ESTABLISHED."
+    ];
 
-const bootTimer = setInterval(() => {
-  progress += Math.floor(Math.random() * 5) + 2;
-  progress = Math.min(progress, 100);
+    const bootTimer = setInterval(() => {
+      progress += Math.floor(Math.random() * 5) + 2;
+      progress = Math.min(progress, 100);
 
-  bootProgress.style.width = progress + "%";
+      bootProgress.style.width = progress + "%";
 
-  const messageIndex = Math.min(
-    Math.floor(progress / 25),
-    bootMessages.length - 1
-  );
+      const messageIndex = Math.min(
+        Math.floor(progress / 25),
+        bootMessages.length - 1
+      );
 
-  bootStatus.textContent =
-    bootMessages[messageIndex] + " " + progress + "%";
+      bootStatus.textContent =
+        bootMessages[messageIndex] + " " + progress + "%";
 
-  if (progress >= 100) {
-    clearInterval(bootTimer);
+      if (progress >= 100) {
+        clearInterval(bootTimer);
 
-    setTimeout(() => {
-      bootScreen.classList.add("boot-hidden");
-    }, 400);
-  }
-}, 90);
+        setTimeout(() => {
+          bootScreen.classList.add("boot-hidden");
+        }, 400);
+      }
+    }, 90);
+  </script>
+</body>
+</html>
+```
 </body>
 </html>
