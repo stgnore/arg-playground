@@ -205,11 +205,6 @@
 .tree-hero-stamp{width:125px;height:125px;border:1px solid #ddd;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;transform:rotate(-8deg);flex:none;color:#777}
 .tree-hero-stamp strong{font:500 39px var(--sans);color:#111}
 .tree-hero-stamp span{font:7px var(--mono);letter-spacing:.12em}
-.tree-console-hint{display:flex;align-items:flex-start;gap:14px;padding:16px 18px;margin:20px 0 0;border:1px solid #dedede;background:#fff}
-.tree-console-hint-mark{display:grid;place-items:center;width:25px;height:25px;flex:none;border:1px solid #111;font:14px var(--mono);color:#111}
-.tree-console-hint-label{font:8px var(--mono);letter-spacing:.11em;color:#777;margin:1px 0 7px}
-.tree-console-hint p:last-child{font-size:11px;line-height:1.8;color:#555;margin:0}
-.tree-console-hint kbd{font:10px var(--mono);border:1px solid #ccc;border-bottom-width:2px;padding:2px 5px;background:#fafafa;color:#111}
 .tree-instruction-row{display:flex;justify-content:space-between;gap:20px;padding:23px 0 16px;align-items:center}
 .tree-instruction-row p{margin:0;color:#777;font-size:11px;line-height:1.8}
 .tree-progress{display:flex;align-items:center;gap:10px;flex:none;font:8px var(--mono);color:#777;letter-spacing:.08em}
@@ -295,8 +290,6 @@
   .tree-hero h1{font-size:clamp(42px,12vw,63px)}
   .tree-hero-copy{font-size:11px;line-height:1.8}
   .tree-hero-stamp{display:none}
-  .tree-console-hint{padding:13px;gap:10px}
-  .tree-console-hint p:last-child{font-size:10px}
   .tree-instruction-row{align-items:flex-start;flex-direction:column;gap:13px;padding:17px 0}
   .tree-layout{grid-template-columns:1fr;gap:20px;padding-top:12px}
   .tree-map-viewport{margin-right:-20px;padding-right:20px}
