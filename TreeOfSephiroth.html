@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Tree of Sephiroth — второй узел внутреннего архива 千本鏡会.">
+  <title>Tree of Sephiroth — 千本鏡会 / NODE 11</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="sephiroth.js" defer></script>
+</head>
+<body class="tree-page">
+  <div class="noise-overlay" aria-hidden="true"></div>
+  <div class="tree-shell">
+    <header class="inner-header home-header tree-header">
+      <a class="brand" href="home.html#home-top" aria-label="千本鏡会 — вернуться в архив">
+        <span class="brand-seal">鏡</span>
+        <span class="brand-lines"><strong>千本鏡会</strong><small>SENBON KAGAMI-KAI</small></span>
+      </a>
+      <nav class="home-nav" aria-label="Навигация по архиву">
+        <a href="home.html#home-top">АРХИВ</a>
+        <a href="home.html#channel">КАНАЛ</a>
+        <a href="home.html#mirror">ЗЕРКАЛО</a>
+      </nav>
+      <button class="logout-button" id="tree-logout" type="button">ЗАКРЫТЬ СЕАНС <span>↗</span></button>
+    </header>
+
+    <main>
+      <div class="tree-welcome"><span class="status-light" aria-hidden="true"></span><span>ВНЕШНИЙ УЗЕЛ ОБНАРУЖЕН</span><span class="welcome-divider">/</span><span>NODE—11</span><span class="tree-welcome-spacer"></span><span id="tree-clock">00:00:00 LOCAL</span></div>
+
+      <section class="tree-hero">
+        <div>
+          <p class="section-code"><span>ARG / CHAPTER 02</span> — TREE OF SEPHIROTH</p>
+          <h1>Дерево —<br><em>не схема.</em></h1>
+          <p class="tree-hero-copy">Схема изображает то, что можно объяснить. Перед тобой оставили то, что пережило объяснение. Открой десять отмеченных сфер. Не пытайся читать их как инструкцию.</p>
+        </div>
+        <div class="tree-hero-stamp" aria-hidden="true"><strong>עץ</strong><span>UNREGISTERED<br>STRUCTURE / 11</span></div>
+      </section>
+
+      <div class="tree-instruction-row">
+        <p>Выбери узел. Каждый сохраняет собственный фрагмент.<br>Порядок открытия не влияет на содержимое записи.</p>
+        <div class="tree-progress" aria-live="polite"><strong id="tree-open-count">00</strong><span>/ 10 УЗЛОВ</span><span class="tree-progress-track" aria-hidden="true"><span id="tree-progress-fill"></span></span></div>
+      </div>
+
+      <section class="tree-layout" aria-label="Дерево сфер и панель расшифровки">
+        <div class="tree-map-viewport" tabindex="0" aria-label="Схему можно прокручивать по горизонтали на небольшом экране">
+          <svg class="sephiroth-map" viewBox="0 0 820 850" role="group" aria-label="Десять узлов Дерева Сефирот">
+            <g aria-hidden="true">
+              <path class="tree-connection" d="M410 68 L590 170 L620 330 L580 555 L410 685 L410 795"/>
+              <path class="tree-connection" d="M410 68 L230 170 L200 330 L240 555 L410 685"/>
+              <path class="tree-connection" d="M590 170 L230 170"/>
+              <path class="tree-connection" d="M620 330 L200 330"/>
+              <path class="tree-connection" d="M580 555 L240 555"/>
+              <path class="tree-connection" d="M590 170 L410 400 L230 170"/>
+              <path class="tree-connection" d="M620 330 L410 400 L200 330"/>
+              <path class="tree-connection" d="M620 330 L580 555"/>
+              <path class="tree-connection" d="M200 330 L240 555"/>
+              <path class="tree-connection" d="M410 400 L580 555 L410 685 L240 555 L410 400"/>
+              <path class="tree-connection" d="M410 400 L410 685"/>
+              <path class="tree-connection is-secret" d="M410 68 L410 795"/>
+            </g>
+            <g class="tree-node" data-sephirah="keter" transform="translate(410 68)" role="button" tabindex="0" aria-pressed="false" aria-label="Кетер — корона">
+              <circle class="node-orbit" r="39"/><circle class="node-core" r="31"/><text class="node-number" y="-12">01</text><text class="node-hebrew" y="6">כתר</text><text class="node-name" y="21">KETER</text>
+            </g>
+            <g class="tree-node" data-sephirah="chokmah" transform="translate(590 170)" role="button" tabindex="0" aria-pressed="false" aria-label="Хокма — мудрость">
+              <circle class="node-orbit" r="39"/><circle class="node-core" r="31"/><text class="node-number" y="-12">02</text><text class="node-hebrew" y="6">חכמה</text><text class="node-name" y="21">CHOKMAH</text>
+            </g>
+            <g class="tree-node" data-sephirah="binah" transform="translate(230 170)" role="button" tabindex="0" aria-pressed="false" aria-label="Бина — понимание">
+              <circle class="node-orbit" r="39"/><circle class="node-core" r="31"/><text class="node-number" y="-12">03</text><text class="node-hebrew" y="6">בינה</text><text class="node-name" y="21">BINAH</text>
+            </g>
+            <g class="tree-node" data-sephirah="chesed" transform="translate(620 330)" role="button" tabindex="0" aria-pressed="false" aria-label="Хесед — милосердие">
+              <circle class="node-orbit" r="39"/><circle class="node-core" r="31"/><text class="node-number" y="-12">04</text><text class="node-hebrew" y="6">חסד</text><text class="node-name" y="21">CHESED</text>
+            </g>
+            <g class="tree-node" data-sephirah="geburah" transform="translate(200 330)" role="button" tabindex="0" aria-pressed="false" aria-label="Гвура — сила">
+              <circle class="node-orbit" r="39"/><circle class="node-core" r="31"/><text class="node-number" y="-12">05</text><text class="node-hebrew" y="6">גבורה</text><text class="node-name" y="21">GEBURAH</text>
+            </g>
+            <g class="tree-node" data-sephirah="tiphereth" transform="translate(410 400)" role="button" tabindex="0" aria-pressed="false" aria-label="Тиферет — красота">
+              <circle class="node-orbit" r="42"/><circle class="node-core" r="33"/><text class="node-number" y="-13">06</text><text class="node-hebrew" y="6">תפארת</text><text class="node-name" y="23">TIPHERETH</text>
+            </g>
+            <g class="tree-node" data-sephirah="netzach" transform="translate(580 555)" role="button" tabindex="0" aria-pressed="false" aria-label="Нецах — вечность">
+              <circle class="node-orbit" r="39"/><circle class="node-core" r="31"/><text class="node-number" y="-12">07</text><text class="node-hebrew" y="6">נצח</text><text class="node-name" y="21">NETZACH</text>
+            </g>
+            <g class="tree-node" data-sephirah="hod" transform="translate(240 555)" role="button" tabindex="0" aria-pressed="false" aria-label="Ход — великолепие">
+              <circle class="node-orbit" r="39"/><circle class="node-core" r="31"/><text class="node-number" y="-12">08</text><text class="node-hebrew" y="6">הוד</text><text class="node-name" y="21">HOD</text>
+            </g>
+            <g class="tree-node" data-sephirah="yesod" transform="translate(410 685)" role="button" tabindex="0" aria-pressed="false" aria-label="Йесод — основание">
+              <circle class="node-orbit" r="39"/><circle class="node-core" r="31"/><text class="node-number" y="-12">09</text><text class="node-hebrew" y="6">יסוד</text><text class="node-name" y="21">YESOD</text>
+            </g>
+            <g class="tree-node" data-sephirah="malkuth" transform="translate(410 795)" role="button" tabindex="0" aria-pressed="false" aria-label="Малкут — царство">
+              <circle class="node-orbit" r="39"/><circle class="node-core" r="31"/><text class="node-number" y="-12">10</text><text class="node-hebrew" y="6">מלכות</text><text class="node-name" y="21">MALKUTH</text>
+            </g>
+          </svg>
+        </div>
+
+        <aside class="tree-detail" aria-live="polite" aria-atomic="true">
+          <div class="tree-detail-top"><span>FRAGMENT READER / 02</span><span id="tree-fragment-status">WAITING</span></div>
+          <p class="micro-label" id="tree-detail-code">SELECT A SPHERE</p>
+          <h2 id="tree-detail-name">Ни одного<br>имени.</h2>
+          <p class="tree-detail-hebrew" id="tree-detail-hebrew">—</p>
+          <p class="tree-detail-reading" id="tree-detail-reading">Выбери один из десяти узлов. Запись появится здесь, но дерево не объяснит, как её понимать.</p>
+          <div class="tree-fragment" id="tree-fragment">[ ОЖИДАНИЕ ВЫБОРА ]</div>
+          <div class="tree-detail-foot"><span>ОТКРЫТЫЙ УЗЕЛ</span><strong id="tree-current-node">— / 10</strong></div>
+        </aside>
+      </section>
+
+      <section class="tree-chamber" id="tree-chamber" hidden aria-labelledby="tree-chamber-title">
+        <div>
+          <p class="section-code"><span>LOCKED RECORD / D—11</span> — UNLISTED</p>
+          <h2 id="tree-chamber-title">Десять записей.<br><em>Одно отсутствие.</em></h2>
+          <p>Реестр считает узлы завершёнными. Система — нет. Назови знание, которого нет среди десяти сфер. Не ищи его на схеме: его отсутствие и есть отметка.</p>
+        </div>
+        <form class="tree-key-form" id="tree-key-form">
+          <label for="tree-key-input">НАЗВАНИЕ НЕЗАРЕГИСТРИРОВАННОГО УЗЛА / 4 LETTERS</label>
+          <div class="tree-key-row"><input id="tree-key-input" name="tree-key" type="text" maxlength="20" autocomplete="off" spellcheck="false" placeholder="ВВЕСТИ КЛЮЧ" aria-describedby="tree-key-message"><button type="submit">СВЕРИТЬ ↗</button></div>
+          <p class="tree-key-message" id="tree-key-message" aria-live="polite">ОЖИДАЕТСЯ ИМЯ.</p>
+          <div class="tree-success-record" id="tree-success-record" hidden>ЗАПИСЬ D—11 ВОССТАНОВЛЕНА.
+
+УЗЕЛ НЕ ОТСУТСТВОВАЛ.
+ОН НЕ БЫЛ ЗАРЕГИСТРИРОВАН.
+
+СЛЕДУЮЩАЯ ОТМЕТКА: 02:13</div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="tree-footer"><span>千本鏡会 / ARCHIVE CONTINUATION</span><a class="tree-back-link" href="home.html#mirror">ВЕРНУТЬСЯ К ЗЕРКАЛУ ↗</a><span>NODE—11 / ACCESS TRACE ACTIVE</span></footer>
+  </div>
+  <noscript><p class="noscript-note">Для расшифровки дерева необходимо включить JavaScript.</p></noscript>
+</body>
+</html>

@@ -109,6 +109,49 @@
       : 'ВЕРНУТЬСЯ К ПЕРВОЙ СТРОКЕ <span>↗</span>';
   });
 
+  // Mirror clue: the visible strings are intentionally reversed for the ARG.
+  const mirrorTrigger = document.getElementById("mirror-trigger");
+  const mirrorEtch = document.getElementById("mirror-etch");
+  const mirrorInstruction = document.getElementById("mirror-instruction");
+  const mirrorState = document.getElementById("mirror-state");
+  const mirrorRevelation = document.getElementById("mirror-revelation");
+  const mirrorReset = document.getElementById("mirror-reset");
+  let mirrorRevealTimer = 0;
+  let mirrorTextTimer = 0;
+
+  function activateMirror() {
+    if (mirrorTrigger.classList.contains("is-awake")) return;
+    mirrorTrigger.classList.add("is-awake");
+    mirrorTrigger.setAttribute("aria-expanded", "true");
+    mirrorState.textContent = "REFLECTION DETECTED";
+    mirrorInstruction.textContent = "ОТРАЖЕНИЕ ОБНАРУЖЕНО";
+    mirrorRevealTimer = window.setTimeout(() => {
+      mirrorEtch.classList.add("is-visible");
+      mirrorEtch.setAttribute("aria-hidden", "false");
+      mirrorTextTimer = window.setTimeout(() => {
+        mirrorRevelation.hidden = false;
+      }, prefersReducedMotion ? 40 : 620);
+    }, prefersReducedMotion ? 0 : 1020);
+  }
+
+  mirrorTrigger.addEventListener("pointerenter", (event) => {
+    if (event.pointerType === "mouse" || event.pointerType === "pen") activateMirror();
+  });
+  mirrorTrigger.addEventListener("focus", activateMirror);
+  mirrorTrigger.addEventListener("click", activateMirror);
+  mirrorReset.addEventListener("click", () => {
+    window.clearTimeout(mirrorRevealTimer);
+    window.clearTimeout(mirrorTextTimer);
+    mirrorTrigger.classList.remove("is-awake");
+    mirrorTrigger.setAttribute("aria-expanded", "false");
+    mirrorEtch.classList.remove("is-visible");
+    mirrorEtch.setAttribute("aria-hidden", "true");
+    mirrorRevelation.hidden = true;
+    mirrorState.textContent = "SURFACE IDLE";
+    mirrorInstruction.textContent = "ПОДНЕСИТЕ КУРСОР К ПОВЕРХНОСТИ";
+    mirrorReset.focus({ preventScroll: true });
+  });
+
   /* The intercom is a local ARG simulation: it does not impersonate or contact real people. */
   const channels = {
     kagami: {

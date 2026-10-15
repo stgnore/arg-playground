@@ -151,3 +151,161 @@
   .chat-sidebar-cap,.chat-roster-heading{font-size:7px}
 }
 @media(prefers-reduced-motion:reduce){.chat-message.is-entering,.typing-dots i,.channel-live i{animation:none!important}}
+
+/* Mirror sequence — the final object in the Senbon Kagami archive. */
+.mirror-section{border-top:1px solid #111;padding:48px 0 30px;margin-top:10px}
+.mirror-section-heading{margin-bottom:18px}
+.mirror-intro{max-width:620px;margin:0 0 28px;color:#777;font-size:12px;line-height:1.9}
+.mirror-stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(170px,.34fr);gap:clamp(22px,5vw,62px);align-items:center;padding:20px 0 28px;border-top:1px solid #e7e7e7;border-bottom:1px solid #e7e7e7}
+.mirror-margin-note{display:flex;justify-content:space-between;gap:12px;grid-column:1/-1;margin-bottom:-6px;color:#aaa;font:7px var(--mono);letter-spacing:.09em}
+.mirror-object{display:block;width:100%;min-width:0;border:0;padding:0;background:transparent;text-align:left;cursor:crosshair;color:#111}
+.mirror-frame{display:block;border:1px solid #cfcfcf;padding:10px;background:#fff;transition:border-color .4s,box-shadow .4s}
+.mirror-glass{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:clamp(270px,36vw,430px);overflow:hidden;border:1px solid #ececec;background:linear-gradient(115deg,#fff 0%,#fafafa 22%,#fff 42%,#f5f5f5 61%,#fff 78%);isolation:isolate}
+.mirror-glass-grid{position:absolute;inset:0;z-index:-1;opacity:.5;background:linear-gradient(90deg,transparent 49.9%,#eee 50%,transparent 50.1%),linear-gradient(0deg,transparent 49.9%,#eee 50%,transparent 50.1%);background-size:72px 72px;mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent)}
+.mirror-crosshair{position:absolute;top:17px;left:50%;transform:translateX(-50%);font:13px var(--mono);color:#bbb}
+.mirror-instruction{position:absolute;left:12px;right:12px;bottom:16px;text-align:center;color:#aaa;font:7px var(--mono);letter-spacing:.1em;transition:opacity .25s}
+.mirror-etch{display:flex;flex-direction:column;align-items:center;gap:17px;padding:24px 12px;opacity:0;transform:translateY(5px);filter:blur(4px);transition:opacity .8s ease,transform .8s ease,filter .8s ease}
+.mirror-etch.is-visible{opacity:1;transform:translateY(0);filter:blur(0)}
+.mirror-code-line{display:block;color:#111;font:500 clamp(17px,2.4vw,29px) var(--mono);letter-spacing:.075em;text-shadow:0 0 1px #777;white-space:nowrap}
+.mirror-glint{position:absolute;z-index:4;top:-40%;bottom:-40%;left:-60%;width:32%;opacity:0;pointer-events:none;transform:skewX(-18deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.92) 45%,rgba(180,180,180,.25) 52%,transparent);mix-blend-mode:screen}
+.mirror-object:hover .mirror-frame,.mirror-object:focus-visible .mirror-frame,.mirror-object.is-awake .mirror-frame{border-color:#777;box-shadow:0 0 0 1px #eee,0 12px 32px rgba(0,0,0,.055)}
+.mirror-object.is-awake .mirror-glint{animation:mirror-glint-sweep 1.15s cubic-bezier(.2,.65,.3,1) both}
+.mirror-object.is-awake .mirror-instruction{opacity:0}
+.mirror-object.is-awake .mirror-crosshair{color:#111}
+.mirror-glass-index{position:absolute;right:11px;top:11px;color:#c2c2c2;font:6px var(--mono);letter-spacing:.08em}
+.mirror-frame-foot{display:flex;justify-content:space-between;gap:10px;padding:11px 1px 1px;color:#999;font:7px var(--mono);letter-spacing:.07em}
+.mirror-frame-foot span:last-child{color:#555}
+.mirror-side-copy{align-self:stretch;display:flex;flex-direction:column;justify-content:center;padding:8px 0}
+.mirror-side-number{display:inline-block;width:max-content;border:1px solid #ddd;padding:7px 9px;margin-bottom:18px;font:9px var(--mono);letter-spacing:.08em}
+.mirror-side-copy>p:first-of-type{font-size:clamp(18px,2vw,25px);letter-spacing:-.045em;line-height:1.35;margin:0;color:#111}
+.mirror-side-copy .mirror-side-muted{font-size:11px;line-height:1.9;color:#888;margin:15px 0 0}
+.mirror-side-rule{display:flex;align-items:center;gap:9px;margin-top:28px;font:7px var(--mono);letter-spacing:.09em;color:#999}
+.mirror-side-rule span:first-child{height:1px;width:25px;background:#111}
+.mirror-revelation{display:grid;grid-template-columns:1fr 1fr auto;gap:18px;align-items:center;padding:26px 0 22px;border-bottom:1px solid #111;animation:mirror-reveal-in .6s ease both}
+.mirror-revelation[hidden]{display:none}
+.mirror-warning-line{font-size:clamp(14px,1.7vw,19px);line-height:1.55;letter-spacing:-.025em;margin:0}
+.mirror-warning-line:first-child{animation:mirror-reveal-in .55s ease .05s both}
+.mirror-warning-line:nth-child(2){animation:mirror-reveal-in .55s ease .27s both}
+.mirror-next-link{display:flex;align-items:center;justify-content:space-between;gap:14px;min-width:190px;border:1px solid #111;padding:14px 12px;text-decoration:none;font:8px var(--mono);letter-spacing:.055em;transition:background .2s,color .2s}
+.mirror-next-link span{font:16px var(--sans);transition:transform .2s}
+.mirror-next-link:hover{background:#111;color:#fff}
+.mirror-next-link:hover span{transform:translate(3px,-3px)}
+.mirror-section-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;color:#aaa;font:7px var(--mono);letter-spacing:.07em}
+.mirror-reset{padding:5px 0;border:0;background:transparent;color:#888;font:inherit;letter-spacing:inherit;cursor:pointer}
+.mirror-reset:hover{color:#111}
+@keyframes mirror-glint-sweep{0%{left:-45%;opacity:0}12%{opacity:.9}100%{left:125%;opacity:0}}
+@keyframes mirror-reveal-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* Tree of Sephiroth — chapter two of the ARG. */
+.tree-page{min-height:100vh;background:#fff;color:#111}
+.tree-shell{width:min(100%,1200px);margin:0 auto;padding:0 var(--pad)}
+.tree-header .home-nav a{white-space:nowrap}
+.tree-welcome{display:flex;align-items:center;gap:10px;min-height:44px;border-bottom:1px solid #ddd;color:#777;font:8px var(--mono);letter-spacing:.08em}
+.tree-welcome-spacer{flex:1}
+.tree-hero{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:52px 0 34px;border-bottom:1px solid #111}
+.tree-hero h1{margin:0;font-size:clamp(42px,7vw,82px);font-weight:500;line-height:.96;letter-spacing:-.075em}
+.tree-hero h1 em{font-style:normal;color:#8a8a8a}
+.tree-hero-copy{max-width:600px;color:#777;font-size:13px;line-height:1.9;margin:20px 0 0}
+.tree-hero-stamp{width:125px;height:125px;border:1px solid #ddd;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;transform:rotate(-8deg);flex:none;color:#777}
+.tree-hero-stamp strong{font:500 39px var(--sans);color:#111}
+.tree-hero-stamp span{font:7px var(--mono);letter-spacing:.12em}
+.tree-instruction-row{display:flex;justify-content:space-between;gap:20px;padding:23px 0 16px;align-items:center}
+.tree-instruction-row p{margin:0;color:#777;font-size:11px;line-height:1.8}
+.tree-progress{display:flex;align-items:center;gap:10px;flex:none;font:8px var(--mono);color:#777;letter-spacing:.08em}
+.tree-progress strong{color:#111;font-size:15px;font-weight:500}
+.tree-progress-track{width:100px;height:2px;background:#eee;overflow:hidden}
+.tree-progress-track span{display:block;width:0;height:100%;background:#111;transition:width .35s ease}
+.tree-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.65fr);gap:clamp(28px,5vw,68px);align-items:start;border-top:1px solid #ddd;padding:22px 0 48px}
+.tree-map-viewport{min-width:0;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:#ccc #fff}
+.sephiroth-map{display:block;width:100%;height:auto;min-width:440px;overflow:visible}
+.tree-connection{fill:none;stroke:#d9d9d9;stroke-width:1.5;vector-effect:non-scaling-stroke}
+.tree-connection.is-secret{stroke:#aaa;stroke-dasharray:3 7}
+.tree-node{cursor:pointer;outline:none}
+.tree-node .node-orbit{fill:none;stroke:#d3d3d3;stroke-width:1;transition:stroke .25s,stroke-width .25s}
+.tree-node .node-core{fill:#fff;stroke:#111;stroke-width:1.2;transition:fill .25s,stroke .25s}
+.tree-node .node-number{font:8px var(--mono);fill:#999;text-anchor:middle;letter-spacing:.1em}
+.tree-node .node-hebrew{font:16px var(--sans);fill:#111;text-anchor:middle}
+.tree-node .node-name{font:7px var(--mono);fill:#777;text-anchor:middle;letter-spacing:.09em}
+.tree-node:hover .node-orbit,.tree-node:focus-visible .node-orbit,.tree-node.is-selected .node-orbit{stroke:#111;stroke-width:2}
+.tree-node:hover .node-core,.tree-node:focus-visible .node-core,.tree-node.is-selected .node-core{fill:#111}
+.tree-node:hover .node-number,.tree-node:hover .node-hebrew,.tree-node:hover .node-name,.tree-node:focus-visible .node-number,.tree-node:focus-visible .node-hebrew,.tree-node:focus-visible .node-name,.tree-node.is-selected .node-number,.tree-node.is-selected .node-hebrew,.tree-node.is-selected .node-name{fill:#fff}
+.tree-node.is-visited .node-orbit{stroke:#777;stroke-dasharray:2 3}
+.tree-node.is-visited .node-core{fill:#f4f4f4}
+.tree-node.is-visited .node-number{fill:#555}
+.tree-node.is-visited .node-hebrew{fill:#111}
+.tree-node.is-visited .node-name{fill:#777}
+.tree-detail{position:sticky;top:22px;border:1px solid #111;padding:25px 23px 22px;background:#fff}
+.tree-detail-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-bottom:14px;border-bottom:1px solid #ddd;color:#888;font:7px var(--mono);letter-spacing:.08em}
+.tree-detail-top span:last-child{color:#111}
+.tree-detail .micro-label{margin:25px 0 8px}
+.tree-detail h2{margin:0;font-size:clamp(30px,3vw,43px);font-weight:500;letter-spacing:-.065em;line-height:1.05}
+.tree-detail-hebrew{margin:6px 0 16px;color:#999;font-size:20px}
+.tree-detail-reading{color:#777;font-size:12px;line-height:1.9;margin:0 0 20px}
+.tree-fragment{border-top:1px solid #ddd;padding-top:17px;color:#111;font:11px/1.85 var(--mono);white-space:pre-line;min-height:90px}
+.tree-detail-foot{display:flex;justify-content:space-between;gap:10px;margin-top:20px;padding-top:13px;border-top:1px solid #eee;font:7px var(--mono);letter-spacing:.06em;color:#aaa}
+.tree-detail-foot strong{font-weight:400;color:#555}
+.tree-chamber{border-top:1px solid #111;border-bottom:1px solid #111;padding:34px 0 37px;margin-bottom:44px;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.7fr);gap:35px;align-items:start}
+.tree-chamber[hidden]{display:none}
+.tree-chamber h2{font-size:clamp(26px,4vw,39px);font-weight:500;letter-spacing:-.06em;margin:0}
+.tree-chamber p{color:#777;font-size:12px;line-height:1.9;max-width:540px}
+.tree-key-form{border:1px solid #ddd;padding:20px}
+.tree-key-form label{display:block;margin-bottom:10px;color:#777;font:8px var(--mono);letter-spacing:.08em}
+.tree-key-row{display:flex;gap:8px}
+.tree-key-row input{flex:1;min-width:0;border:0;border-bottom:1px solid #aaa;background:#fff;color:#111;padding:12px 0;font:11px var(--mono);outline:none}
+.tree-key-row input:focus{border-bottom-color:#111}
+.tree-key-row button{border:1px solid #111;background:#111;color:#fff;padding:0 12px;font:8px var(--mono);letter-spacing:.05em;cursor:pointer}
+.tree-key-row button:hover{background:#fff;color:#111}
+.tree-key-message{margin:12px 0 0;color:#777;font:9px/1.8 var(--mono);white-space:pre-line}
+.tree-key-message.is-success{color:#111}
+.tree-success-record{margin-top:16px;border-top:1px solid #ddd;padding-top:16px;font:10px/1.9 var(--mono);color:#111;white-space:pre-line}
+.tree-success-record[hidden]{display:none}
+.tree-footer{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:17px 0 24px;border-top:1px solid #ddd;color:#888;font:7px var(--mono);letter-spacing:.07em}
+.tree-back-link{text-decoration:none;border-bottom:1px solid #ddd;padding-bottom:3px}
+.tree-back-link:hover{border-color:#111;color:#111}
+@media(max-width:800px){
+  .mirror-stage{grid-template-columns:minmax(0,1fr) 180px;gap:24px}
+  .mirror-glass{min-height:300px}
+  .mirror-revelation{grid-template-columns:1fr 1fr}
+  .mirror-next-link{grid-column:1/-1;justify-self:start}
+  .tree-layout{grid-template-columns:minmax(0,1fr) minmax(230px,.72fr);gap:22px}
+  .tree-detail{padding:21px 17px}
+  .tree-hero-stamp{width:95px;height:95px}
+  .tree-hero-stamp strong{font-size:31px}
+}
+@media(max-width:620px){
+  .home-nav{gap:7px}
+  .home-nav a{font-size:7px;letter-spacing:.025em}
+  .mirror-section{padding-top:33px}
+  .mirror-stage{grid-template-columns:1fr;gap:21px;padding-top:14px}
+  .mirror-margin-note{font-size:6px;gap:5px}
+  .mirror-glass{min-height:285px}
+  .mirror-code-line{font-size:clamp(16px,4.6vw,23px);letter-spacing:.025em}
+  .mirror-side-copy{display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:start}
+  .mirror-side-number{grid-row:span 2;margin:0}
+  .mirror-side-copy>p:first-of-type{font-size:19px}
+  .mirror-side-copy .mirror-side-muted{grid-column:2;margin-top:9px;font-size:10px}
+  .mirror-side-rule{grid-column:2;margin-top:16px}
+  .mirror-revelation{grid-template-columns:1fr;gap:10px;padding:22px 0}
+  .mirror-warning-line{font-size:17px}
+  .mirror-next-link{grid-column:auto;width:100%;margin-top:5px}
+  .mirror-section-foot{align-items:flex-start;font-size:6px}
+  .mirror-reset{font-size:6px;white-space:nowrap}
+  .tree-header .home-nav{gap:10px}
+  .tree-welcome{font-size:6px;gap:6px;flex-wrap:wrap;padding:9px 0}
+  .tree-hero{padding:37px 0 27px;align-items:flex-start}
+  .tree-hero h1{font-size:clamp(42px,12vw,63px)}
+  .tree-hero-copy{font-size:11px;line-height:1.8}
+  .tree-hero-stamp{display:none}
+  .tree-instruction-row{align-items:flex-start;flex-direction:column;gap:13px;padding:17px 0}
+  .tree-layout{grid-template-columns:1fr;gap:20px;padding-top:12px}
+  .tree-map-viewport{margin-right:-20px;padding-right:20px}
+  .sephiroth-map{min-width:430px;width:430px}
+  .tree-detail{position:relative;top:auto;padding:22px}
+  .tree-chamber{grid-template-columns:1fr;gap:15px;padding:28px 0;margin-bottom:30px}
+  .tree-key-form{padding:16px}
+  .tree-footer{font-size:6px;gap:10px;align-items:flex-start;line-height:1.8}
+}
+@media(prefers-reduced-motion:reduce){.mirror-glint,.mirror-revelation,.mirror-warning-line{animation:none!important}.mirror-etch,.mirror-frame,.tree-node .node-core,.tree-node .node-orbit{transition:none!important}}
+.tree-node.is-selected .node-core{fill:#111}
+.tree-node.is-selected .node-number,.tree-node.is-selected .node-hebrew,.tree-node.is-selected .node-name{fill:#fff}
+.tree-key-row button:disabled{cursor:default;opacity:.55}

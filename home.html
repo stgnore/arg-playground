@@ -20,7 +20,7 @@
         <span class="brand-seal">鏡</span>
         <span class="brand-lines"><strong>千本鏡会</strong><small>SENBON KAGAMI-KAI</small></span>
       </a>
-      <nav class="home-nav" aria-label="Навигация по архиву"><a href="#home-top" class="active">ОБЗОР</a><a href="#archive">АРХИВ</a><a href="#channel">КАНАЛ</a><a href="#fragment">ФРАГМЕНТ</a></nav>
+      <nav class="home-nav" aria-label="Навигация по архиву"><a href="#home-top" class="active">ОБЗОР</a><a href="#archive">АРХИВ</a><a href="#channel">КАНАЛ</a><a href="#fragment">ФРАГМЕНТ</a><a href="#mirror">ЗЕРКАЛО</a></nav>
       <button class="logout-button" id="logout-button" type="button">ЗАКРЫТЬ СЕАНС <span>↗</span></button>
     </header>
 
@@ -76,6 +76,44 @@
       </section>
 
       <section class="fragment-panel" id="fragment"><div class="fragment-symbol" aria-hidden="true">「鏡」</div><div><p class="section-code"><span>UNSOLICITED MESSAGE</span> / 00:00:13</p><h2>Ты не первый, кто вошёл.</h2><p id="fragment-copy">Последний наблюдатель оставил одну строку: «Не доверяй тому, что помнит твоё имя».</p></div><button type="button" id="reveal-fragment" class="fragment-button">ПОКАЗАТЬ СЛЕДУЮЩУЮ СТРОКУ <span>↗</span></button></section>
+      <section class="mirror-section" id="mirror" aria-labelledby="mirror-title">
+        <div class="section-heading mirror-section-heading">
+          <div><p class="section-code"><span>04</span> / SPECULAR ACCESS</p><h2 id="mirror-title">Зеркало не возвращает лица.</h2></div>
+          <span class="archive-count">REFLECTION INDEX / 01</span>
+        </div>
+        <p class="mirror-intro">В конце архива стоит предмет, которого нет в описи. Не касайся стекла, если ожидаешь увидеть себя.</p>
+        <div class="mirror-stage">
+          <div class="mirror-margin-note" aria-hidden="true"><span>面影 — OMOKAGE</span><span>НЕПРЯМОЙ СВЕТ</span><span>00:00:00 / 反射</span></div>
+          <button type="button" class="mirror-object" id="mirror-trigger" aria-expanded="false" aria-controls="mirror-revelation" aria-label="Коснуться зеркала и проявить отражение">
+            <span class="mirror-frame">
+              <span class="mirror-glass">
+                <span class="mirror-glass-grid" aria-hidden="true"></span>
+                <span class="mirror-crosshair" aria-hidden="true">＋</span>
+                <span class="mirror-instruction" id="mirror-instruction">ПОДНЕСИТЕ КУРСОР К ПОВЕРХНОСТИ</span>
+                <span class="mirror-etch" id="mirror-etch" aria-hidden="true">
+                  <span class="mirror-code-line">htorihpeSfOeerT</span>
+                  <span class="mirror-code-line">иртомсоП</span>
+                </span>
+                <span class="mirror-glint" aria-hidden="true"></span>
+                <span class="mirror-glass-index" aria-hidden="true">SK—000 / ОБЪЕКТ НЕ ОПИСАН</span>
+              </span>
+              <span class="mirror-frame-foot"><span>千本鏡会 / SPECIMEN 04</span><span id="mirror-state">SURFACE IDLE</span></span>
+            </span>
+          </button>
+          <div class="mirror-side-copy">
+            <span class="mirror-side-number">04—鏡</span>
+            <p>Отражение опаздывает на один жест.</p>
+            <p class="mirror-side-muted">Если поверхность кажется пустой, не отходи. Она ещё не решила, что именно показывать.</p>
+            <div class="mirror-side-rule"><span></span><span>WAIT FOR GLINT</span></div>
+          </div>
+        </div>
+        <div class="mirror-revelation" id="mirror-revelation" hidden aria-live="polite">
+          <p class="mirror-warning-line">То, что вы видите — перевёрнуто.</p>
+          <p class="mirror-warning-line">То, что у вас есть — неполно.</p>
+          <a class="mirror-next-link" id="mirror-next-link" href="TreeOfSephiroth.html">ОТКРЫТЬ СЛЕДУЮЩИЙ УЗЕЛ <span>↗</span></a>
+        </div>
+        <div class="mirror-section-foot"><span>ЗАПИСЬ ВОЗНИКЛА ПОСЛЕ НАБЛЮДЕНИЯ</span><button type="button" id="mirror-reset" class="mirror-reset">СБРОСИТЬ ОТРАЖЕНИЕ ↺</button></div>
+      </section>
       <div id="record-modal" class="record-modal" hidden role="dialog" aria-modal="true" aria-labelledby="record-title"><div class="modal-card"><div class="modal-top"><span id="record-code">DOC—001</span><button type="button" id="close-record" aria-label="Закрыть документ">×</button></div><p class="micro-label">ВНУТРЕННИЙ АРХИВ / РАСШИФРОВАНО</p><h2 id="record-title">Протокол зеркала</h2><p id="record-body"></p><div class="modal-bottom">千本鏡会 — COPY <span>НЕ ДЛЯ РАСПРОСТРАНЕНИЯ</span></div></div></div>
     </main>
     <footer class="inner-footer"><span>千本鏡会 © INTERNAL ARCHIVE</span><span>ЕСЛИ ТЫ ЧИТАЕШЬ ЭТО, ТОБЕ УЖЕ ОТВЕТИЛИ.</span></footer>
