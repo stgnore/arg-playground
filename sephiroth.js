@@ -71,6 +71,7 @@
   const keyInput = document.getElementById("tree-key-input");
   const keyMessage = document.getElementById("tree-key-message");
   const successRecord = document.getElementById("tree-success-record");
+  const adamRecord = document.getElementById("adam-record");
   const logout = document.getElementById("tree-logout");
   const visited = new Set();
 
@@ -134,6 +135,19 @@
       keyMessage.textContent = "ИМЯ ПРИНЯТО. ЖУРНАЛ ДОПОЛНЕН.";
       keyMessage.classList.add("is-success");
       successRecord.hidden = false;
+      if (adamRecord) {
+        adamRecord.hidden = false;
+        // A slight stagger keeps the first transcript lines readable while signal interference starts.
+        adamRecord.querySelectorAll(".adam-line-text").forEach((line, index) => {
+          line.style.animationDelay = `-${(index * 1.73) % 9}s`;
+        });
+        window.setTimeout(() => {
+          adamRecord.scrollIntoView({
+            behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+            block: "start"
+          });
+        }, 120);
+      }
       keyInput.setAttribute("readonly", "readonly");
       keyForm.querySelector("button").disabled = true;
       keyForm.querySelector("button").textContent = "ПОДТВЕРЖДЕНО";

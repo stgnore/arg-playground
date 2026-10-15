@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" fill="#fff"/>
-  <circle cx="32" cy="32" r="28" fill="none" stroke="#111" stroke-width="1.5"/>
-  <circle cx="32" cy="32" r="23" fill="none" stroke="#aaa" stroke-width=".7" stroke-dasharray="1.5 3"/>
-  <text x="32" y="42" text-anchor="middle" font-family="serif" font-size="30" fill="#111">鏡</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="#fff"/><circle cx="32" cy="32" r="29" fill="none" stroke="#111" stroke-width="1.5"/><path d="M16 23h32l-3 5H19zM20 28h5v18h-5zM39 28h5v18h-5zM17 45h30v4H17z" fill="#111"/><path d="M32 12v7M28.5 15.5h7" stroke="#111" stroke-width="1"/></svg>
