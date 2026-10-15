@@ -1,6 +1,13 @@
 (() => {
   "use strict";
 
+  // ARG trail: visible only in the browser's developer console.
+  // The URL is intentionally Caesar-shifted; do not make it a clickable on-page link.
+  console.groupCollapsed("%c千本鏡会 / СЛУЖЕБНЫЙ ЖУРНАЛ", "font: 11px monospace; letter-spacing: 2px; color: #111;");
+  console.info("%ceqqmp://fjdro.zlj/dxiibov/KmXwYLr1", "font: 13px monospace; color: #111; background: #f3f3f3; padding: 3px 6px;");
+  console.log("Когда-то давно один диктатор использовал такое шифрование.");
+  console.groupEnd();
+
   let hasSession = false;
   try {
     hasSession = sessionStorage.getItem("sk-arg-authenticated") === "1";

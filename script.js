@@ -2,13 +2,13 @@
   "use strict";
 
   /* =============================================================
-     TEST ACCESS SETTINGS
+     ACCESS SETTINGS
      Change these two values when you customize your ARG.
      This is a FRONT-END DEMO only; client-side credentials are not secure.
      ============================================================= */
-  const TEST_CREDENTIALS = {
-    username: "admin",
-    password: "admin"
+  const ACCESS_CREDENTIALS = {
+    username: "ADAM-1",
+    password: "Sephiroth"
   };
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -292,7 +292,7 @@
     const password = passwordInput.value;
     loginResponse.hidden = false;
 
-    if (username === TEST_CREDENTIALS.username && password === TEST_CREDENTIALS.password) {
+    if (username === ACCESS_CREDENTIALS.username && password === ACCESS_CREDENTIALS.password) {
       loginResponse.className = "form-response is-success";
       loginResponse.textContent = "ИДЕНТИФИКАЦИЯ ПОДТВЕРЖДЕНА.\nОТКРЫВАЮ ВНУТРЕННИЙ АРХИВ…";
       try {
